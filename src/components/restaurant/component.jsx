@@ -1,4 +1,5 @@
 import { Menu } from "../menu/component";
+import { ReviewForm } from "../review-form/component";
 
 export const Restaurant = ({ restaurant }) => {
   if (!restaurant) {
@@ -9,6 +10,7 @@ export const Restaurant = ({ restaurant }) => {
     <div>
       <h2>{restaurant.name}</h2>
       <Menu dishes={restaurant.menu} />
+      <ReviewForm />
     </div>
   );
 };
