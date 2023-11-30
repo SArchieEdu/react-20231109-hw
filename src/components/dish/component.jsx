@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Counter } from "../counter/component";
 
-export const Dish = ({ dish }) => {
+export const Dish = ({ dish, className }) => {
   const [amount, setAmount] = useState(0);
 
   if (!dish) {
@@ -9,7 +9,7 @@ export const Dish = ({ dish }) => {
   }
 
   return (
-    <div>
+    <div className={className}>
       <div>{dish.name}</div>
       <Counter
         value={amount}

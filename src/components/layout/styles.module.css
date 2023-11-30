@@ -1,0 +1,10 @@
+.root {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+}
