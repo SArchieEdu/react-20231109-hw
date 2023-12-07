@@ -1,5 +1,9 @@
 import { Button } from "../button/component";
 
-export const Tab = ({ children, onClick }) => {
-  return <Button onClick={onClick}>{children}</Button>;
+export const Tab = ({ children, onClick, className }) => {
+  return (
+    <Button onClick={onClick} className={className}>
+      {children}
+    </Button>
+  );
 };

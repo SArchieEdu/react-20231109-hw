@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { RestaurantTabs } from "../../components/restaurant-tabs/component";
-import { Restaurant } from "../../components/restaurant/component";
 import { Layout } from "../../components/layout/component";
+import { RestaurantContainer } from "../../components/restaurant/container";
+import { RestaurantTabsContainer } from "../../components/restaurant-tabs/container";
 
-export const RestaurantsPage = ({ restaurants }) => {
-  const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0);
-
-  const activeRestaurant = restaurants[activeRestaurantIndex];
+export const RestaurantsPage = () => {
+  const [activeRestaurantId, setActiveRestaurantId] = useState(0);
 
   return (
     <Layout>
-      <RestaurantTabs
-        restaurants={restaurants}
-        onTabClick={setActiveRestaurantIndex}
+      <RestaurantTabsContainer
+        activeRestaurantId={activeRestaurantId}
+        onTabClick={setActiveRestaurantId}
       />
-      {activeRestaurant && <Restaurant restaurant={activeRestaurant} />}
+      {activeRestaurantId && activeRestaurantId !== "All" && (
+        <RestaurantContainer restaurantId={activeRestaurantId} />
+      )}
     </Layout>
   );
 };
