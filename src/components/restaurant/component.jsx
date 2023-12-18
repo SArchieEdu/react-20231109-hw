@@ -1,5 +1,5 @@
-import { MenuContainer } from "../menu/container";
-import { ReviewForm } from "../review-form/component";
+import { CreateReviewContainer } from "../create-reveiw-form/container";
+import { ReviewsContainer } from "../reviews/container";
 
 export const Restaurant = ({ restaurant }) => {
   if (!restaurant) {
@@ -9,8 +9,8 @@ export const Restaurant = ({ restaurant }) => {
   return (
     <div>
       <h2>{restaurant.name}</h2>
-      <MenuContainer restaurantId={restaurant.id} />
-      <ReviewForm />
+      <ReviewsContainer restaurantId={restaurant.id} />
+      <CreateReviewContainer restaurantId={restaurant.id} />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { Counter } from "../counter/component";
+import { Button } from "../button/component";
 
 const INITIAL_STATE = {
   name: "",
@@ -42,8 +43,8 @@ const reducer = (state, action) => {
   }
 };
 
-export const ReviewForm = () => {
-  const [formValue, dispatch] = useReducer(reducer, INITIAL_STATE);
+export const ReviewForm = ({ initialState = INITIAL_STATE, onSave }) => {
+  const [formValue, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div>
@@ -85,6 +86,7 @@ export const ReviewForm = () => {
           min={1}
         />
       </div>
+      <Button onClick={() => onSave?.(formValue)}>Save</Button>
     </div>
   );
 };

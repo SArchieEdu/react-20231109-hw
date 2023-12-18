@@ -1,14 +1,9 @@
 /* eslint-disable react/jsx-key */
-import { RestaurantTabContainer } from "../restaurant-tab/container";
 import { Tab } from "../tab/component";
 
 import styles from "./styles.module.css";
 
-export const RestaurantTabs = ({
-  restaurantIds,
-  onTabClick,
-  activeRestaurantId,
-}) => {
+export const RestaurantTabs = ({ restaurants, onTabClick }) => {
   return (
     <div>
       <Tab onClick={() => onTabClick(null)} className={styles.tab}>
@@ -17,13 +12,10 @@ export const RestaurantTabs = ({
       <Tab onClick={() => onTabClick("All")} className={styles.tab}>
         All
       </Tab>
-      {restaurantIds.map((id) => (
-        <RestaurantTabContainer
-          restaurantId={id}
-          onClick={() => onTabClick(id)}
-          isActive={id === activeRestaurantId}
-          className={styles.tab}
-        />
+      {restaurants.map(({ id, name }) => (
+        <Tab onClick={() => onTabClick(id)} className={styles.tab}>
+          {name}
+        </Tab>
       ))}
     </div>
   );

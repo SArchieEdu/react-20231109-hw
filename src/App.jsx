@@ -1,5 +1,4 @@
 import { Provider } from "react-redux";
-import { RestaurantsPage } from "./pages/restaurants-page/component";
 import "./styles/index.css";
 import store from "./redux";
 import { RestaurantsPageContainer } from "./pages/restaurants-page/container";
