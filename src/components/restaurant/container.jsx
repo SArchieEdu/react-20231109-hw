@@ -1,5 +1,6 @@
 import { Restaurant } from "./component";
 import { useGetRestaurantsQuery } from "../../redux/services/api";
+import { useParams } from "react-router-dom";
 
 function getRestaurantFromResult(restaurantId, result) {
   return {
@@ -8,7 +9,8 @@ function getRestaurantFromResult(restaurantId, result) {
   };
 }
 
-export const RestaurantContainer = ({ restaurantId }) => {
+export const RestaurantContainer = () => {
+  const { restaurantId } = useParams();
   const {
     data: restaurant,
     isFetching,

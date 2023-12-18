@@ -13,7 +13,7 @@ export const RestaurantTabs = ({ restaurants, onTabClick }) => {
         All
       </Tab>
       {restaurants.map(({ id, name }) => (
-        <Tab onClick={() => onTabClick(id)} className={styles.tab}>
+        <Tab to={`/restaurants/${id}`} className={styles.tab}>
           {name}
         </Tab>
       ))}

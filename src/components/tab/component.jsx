@@ -1,9 +1,9 @@
-import { Button } from "../button/component";
+import { NavLink } from "react-router-dom";
 
-export const Tab = ({ children, onClick, className }) => {
+export const Tab = ({ children, to, className }) => {
   return (
-    <Button onClick={onClick} className={className}>
+    <NavLink to={to} className={className}>
       {children}
-    </Button>
+    </NavLink>
   );
 };
