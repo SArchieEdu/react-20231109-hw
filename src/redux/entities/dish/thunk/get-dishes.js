@@ -12,14 +12,15 @@ export const getDishes = createAsyncThunk(
     const result = await response.json();
 
     return result;
-  },
-  {
-    condition: (restaurantId, { getState }) => {
-      const state = getState();
-      const restaurantDishIds = selectRestaurantDishIds(state, restaurantId);
-      const dishIds = selectDishIds(state);
-
-      return !restaurantDishIds.every((id) => dishIds.includes(id));
-    },
   }
+  // {
+  //   condition: (restaurantId, { getState }) => {
+  //     const state = getState();
+  //     const restaurantDishIds =
+  //       selectRestaurantDishIds(state, restaurantId) || [];
+  //     const dishIds = selectDishIds(state);
+
+  //     return !restaurantDishIds.every((id) => dishIds.includes(id));
+  //   },
+  // }
 );

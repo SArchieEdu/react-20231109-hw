@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { Button } from "../button/component";
 import { useTheme } from "../../contexts/theme/hooks";
 import { ThemeProvider } from "../../contexts/theme/component";
+import { CartButton } from "../cart-button/component";
 
 export const Header = ({ className }) => {
   const { toggleTheme } = useTheme();
@@ -11,6 +12,7 @@ export const Header = ({ className }) => {
     <div className={classNames(styles.root, className)}>
       <ThemeProvider>
         <Button onClick={toggleTheme}>ToggleTheme</Button>
+        <CartButton />
       </ThemeProvider>
     </div>
   );

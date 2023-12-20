@@ -1,0 +1,19 @@
+.root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.363);
+}
+
+.modal {
+    position: absolute;
+    background: white;
+    padding: 2px 4px;
+    border: 1px solid black;
+    border-radius: 4px;
+
+    top: 10px;
+    left: 20px;
+}

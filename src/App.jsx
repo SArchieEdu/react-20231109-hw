@@ -9,6 +9,7 @@ import { Route } from "react-router-dom";
 import { RestaurantContainer } from "./components/restaurant/container";
 import { ReviewsContainer } from "./components/reviews/container";
 import { Navigate } from "react-router-dom";
+import { MenuContainer } from "./components/menu/container";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
               <Route index element={<div>Select Restaurant</div>} />
               <Route path=":restaurantId" element={<RestaurantContainer />}>
                 <Route index element={<Navigate to="menu" replace />} />
-                <Route path="menu" element={<div>Menu</div>} />
+                <Route path="menu" element={<MenuContainer />} />
                 <Route path="reviews" element={<ReviewsContainer />} />
               </Route>
             </Route>

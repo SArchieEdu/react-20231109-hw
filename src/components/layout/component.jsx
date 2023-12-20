@@ -11,6 +11,8 @@ export const Layout = ({ children }) => {
         <main>{children}</main>
         <Footer />
       </div>
+      <div id="modal-container" />
+      <div id="popup-container" />
     </ThemeProvider>
   );
 };
